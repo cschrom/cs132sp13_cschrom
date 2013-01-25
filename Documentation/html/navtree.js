@@ -1,6 +1,8 @@
 var NAVTREE =
 [
-  [ "Prog_0b", "index.html", ]
+  [ "Project_0b", "index.html", [
+    [ "cs132sp13_cschrom", "md__r_e_a_d_m_e.html", null ]
+  ] ]
 ];
 
 var NAVTREEINDEX =
