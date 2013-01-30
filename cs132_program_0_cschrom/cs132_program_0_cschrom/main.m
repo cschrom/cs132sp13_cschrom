@@ -1,6 +1,6 @@
 /**
  @file main.m
- @author Prof. Adams
+ @author Prof. Adams, Colby Schrom
  @date 2013 01 18
  */
 
@@ -19,17 +19,20 @@ int main(void)
         
         NSLog(@"array unitialized %@", words);
         words = [[NSMutableArray alloc] init];
-        
         NSLog(@"initialized array %@", words);
+        
+        NSLog(@"adding to array %@", words);
         [words addObject:(@" ,")];
         
-        NSLog(@"initialized array %@", words);
+        NSLog(@"adding to array %@", words);
         [words addObject:(@"Hello")];
         
-        NSLog(@"initialized array %@", words);
+        NSLog(@"adding to array %@", words);
         [words addObject:(@"World")];
         
+        NSLog(@"sorting %@", words);
         [words sortUsingSelector: @selector(localizedCaseInsensitiveCompare:)];
+        
         
         
     }
