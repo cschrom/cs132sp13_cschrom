@@ -15,6 +15,10 @@ int main(void)
     
     @autoreleasepool {
         
+        NSMutableArray* words = nil;
+        
+        NSLog(@"array unitialized %@", words);
+        
             }
     return EXIT_SUCCESS;
 }
