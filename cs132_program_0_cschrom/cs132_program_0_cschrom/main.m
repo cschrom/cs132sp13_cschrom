@@ -30,11 +30,9 @@ int main(void)
         NSLog(@"adding to array %@", words);
         [words addObject:(@"World")];
         
-        NSLog(@"sorting %@", words);
         [words sortUsingSelector: @selector(localizedCaseInsensitiveCompare:)];
-        
-        
-        
+        NSLog(@"sorting %@", words);
+                
     }
     return EXIT_SUCCESS;
 }
