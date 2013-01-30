@@ -18,6 +18,11 @@ int main(void)
         NSMutableArray* words = nil;
         
         NSLog(@"array unitialized %@", words);
+        words = [[NSMutableArray alloc] init];
+        
+        NSLog(@"initialized array %@", words);
+        [words addObject:(@" ,", words)];
+        
         
             }
     return EXIT_SUCCESS;
