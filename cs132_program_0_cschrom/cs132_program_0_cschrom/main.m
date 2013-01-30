@@ -21,9 +21,17 @@ int main(void)
         words = [[NSMutableArray alloc] init];
         
         NSLog(@"initialized array %@", words);
-        [words addObject:(@" ,", words)];
+        [words addObject:(@" ,")];
+        
+        NSLog(@"initialized array %@", words);
+        [words addObject:(@"Hello")];
+        
+        NSLog(@"initialized array %@", words);
+        [words addObject:(@"World")];
+        
+        [words sortUsingSelector: @selector(localizedCaseInsensitiveCompare:)];
         
         
-            }
+    }
     return EXIT_SUCCESS;
 }
