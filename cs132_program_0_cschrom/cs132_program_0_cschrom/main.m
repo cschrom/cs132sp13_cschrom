@@ -2,6 +2,7 @@
  @file main.m
  @author Prof. Adams, Colby Schrom
  @date 2013 01 18
+ @assistance Eric Shane
  */
 
 #import <Foundation/Foundation.h>
