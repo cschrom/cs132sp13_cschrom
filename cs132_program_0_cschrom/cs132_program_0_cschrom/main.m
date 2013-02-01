@@ -39,10 +39,10 @@ int main(void)
         word = [[NSMutableString alloc] initWithString:[words objectAtIndex:0]];
         NSLog(@"initialized string %@", word);
         
-        [word appendString:[words objectAtIndex:1]];
+        [word appendString:[words objectAtIndex:2]];
         NSLog(@"appended to string %@ 'Hello'", word);
         
-        [word insertString: [words objectAtIndex:0] atIndex:0];
+        [word insertString: [words objectAtIndex:0] atIndex:1];
         NSLog(@"inserted string ' ,' to %@", word);
     }
     return EXIT_SUCCESS;
