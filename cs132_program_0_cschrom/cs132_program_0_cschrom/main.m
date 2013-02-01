@@ -40,10 +40,10 @@ int main(void)
         NSLog(@"initialized string %@", word);
         
         [word appendString:[words objectAtIndex:2]];
-        NSLog(@"appended to string %@ 'Hello'", word);
+        NSLog(@"appended string %@", word);
         
-        [word insertString: [words objectAtIndex:0] atIndex:1];
-        NSLog(@"inserted string ' ,' to %@", word);
+        [word insertString: [words objectAtIndex:1] atIndex:1];
+        NSLog(@"inserted string %@", word);
     }
     return EXIT_SUCCESS;
 }
