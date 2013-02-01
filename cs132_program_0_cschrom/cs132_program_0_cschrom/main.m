@@ -32,7 +32,18 @@ int main(void)
         
         [words sortUsingSelector: @selector(localizedCaseInsensitiveCompare:)];
         NSLog(@"sorting %@", words);
-                
+        
+        NSMutableString* word = nil;
+        
+        NSLog(@"string unitialized %@", word);
+        word = [[NSMutableString alloc] initWithString:[words objectAtIndex:0]];
+        NSLog(@"initialized string %@", word);
+        
+        [word appendString:[words objectAtIndex:1]];
+        NSLog(@"appended to string %@ 'Hello'", word);
+        
+        [word insertString: [words objectAtIndex:0] atIndex:0];
+        NSLog(@"inserted string ' ,' to %@", word);
     }
     return EXIT_SUCCESS;
 }
