@@ -7,7 +7,12 @@
 
 -(void) pressKey: (char) theKey
 {
-    NSLog(@"STUB response to '%@' message received by object at %p (%@)", NSStringFromSelector(_cmd), self, self);
+    scanf("%d", &numberOnScreen);
+    if (numberOnScreen >= 48 && numberOnScreen <=57)
+    {
+        numberOnScreen = numberOnScreen*10 + numberOnScreen;
+    }
+    else numberOnScreen = numberOnScreen;
     return;
 }
 
