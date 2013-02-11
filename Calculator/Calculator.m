@@ -14,6 +14,6 @@
 
 -(NSString*) description
 {
-    return [NSString stringWithFormat:@"Calculator with %d on screen.", NAN];
+    return [NSString stringWithFormat:@"Calculator with %f on screen.", NAN];
 }
 @end
