@@ -7,11 +7,15 @@
 
 -(void) pressKey: (char) theKey
 {
-    if (numberOnScreen >= '0' && numberOnScreen <='9')
+    if (numberOnScreen >= 0 && numberOnScreen <=9)
     {
-        numberOnScreen = numberOnScreen*10 + numberOnScreen;
+        numberOnScreen = numberOnScreen * 10 + numberOnScreen;
     }
-    else numberOnScreen = numberOnScreen;
+    if (theKey == 'C' || theKey == 'c')
+    {
+        numberOnScreen = 0;
+    }
+    else NSLog(@"Uncovered argument '%c' in %@ message received by object at %p (%@)", theKey, NSStringFromSelector(_cmd), self, self);
     return;
 }
 
