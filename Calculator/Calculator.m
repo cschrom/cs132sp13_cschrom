@@ -3,7 +3,7 @@
 @implementation Calculator
 @synthesize numberOnScreen;
 @synthesize numberAccumulated;
-@synthesize operatingPending;
+@synthesize operationPending;
 
 -(void) pressKey: (char) theKey
 {
