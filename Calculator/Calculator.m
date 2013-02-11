@@ -7,8 +7,7 @@
 
 -(void) pressKey: (char) theKey
 {
-    scanf("%d", &numberOnScreen);
-    if (numberOnScreen >= 48 && numberOnScreen <=57)
+    if (numberOnScreen >= '0' && numberOnScreen <='9')
     {
         numberOnScreen = numberOnScreen*10 + numberOnScreen;
     }
