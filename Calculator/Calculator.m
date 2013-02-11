@@ -1,6 +1,15 @@
 #import "Calculator.h"
 
 @implementation Calculator
+@synthesize numberOnScreen;
+@synthesize numberAccumulated;
+@synthesize operatingPending;
+
+-(void) pressKey: (char) theKey
+{
+    NSLog(@"STUB response to '%@' message received by object at %p (%@)", NSStringFromSelector(_cmd), self, self);
+    return;
+}
 
 - (id)init
 {
@@ -14,6 +23,6 @@
 
 -(NSString*) description
 {
-    return [NSString stringWithFormat:@"Calculator with %f on screen.", NAN];
+    return [NSString stringWithFormat:@"Calculator with %d on screen.", numberOnScreen];
 }
 @end
