@@ -9,10 +9,7 @@
 {
     if(isADigit(theKey) == YES)
     {
-        int nos = [self numberOnScreen];
-        int digit = theKey - '0';
-        int newNumber = nos*10 + digit;
-        [self setNumberOnScreen:newNumber];
+        [self appendDigit:theKey];
         
         //numberOnScreen = numberOnScreen * 10 + theKey - '0';
         } else if (isClearScreenKey(theKey) == YES)
@@ -54,6 +51,14 @@ bool isClearScreenKey(char theChar)
         return YES;
     }   else
         return NO;
+}
+
+-(void) appendDigit: (char) charDigit
+{
+    int nos = [self numberOnScreen];
+    int digit = charDigit - '0';
+    int newNumber = nos*10 + digit;
+    [self setNumberOnScreen:newNumber];
 }
 
 @end
