@@ -7,5 +7,7 @@
 
 -(void) pressKey: (char) theKey;
 bool isADigit(char someChar);
+bool isClearScreenKey(char theChar);
+
 
 @end

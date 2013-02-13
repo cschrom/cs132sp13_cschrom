@@ -15,7 +15,7 @@
         [self setNumberOnScreen:newNumber];
         
         //numberOnScreen = numberOnScreen * 10 + theKey - '0';
-        } else if (theKey == 'C' || theKey == 'c')
+        } else if (isClearScreenKey(theKey) == YES)
             {
                 [self setNumberOnScreen:0];
             } else
@@ -44,6 +44,15 @@ bool isADigit(char someChar)
     {
         return YES;
     } else
+        return NO;
+}
+
+bool isClearScreenKey(char theChar)
+{
+    if (theChar == 'C' || theChar == 'c')
+    {
+        return YES;
+    }   else
         return NO;
 }
 
