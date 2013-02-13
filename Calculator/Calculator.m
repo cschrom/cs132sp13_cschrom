@@ -14,7 +14,7 @@
         //numberOnScreen = numberOnScreen * 10 + theKey - '0';
         } else if (isClearScreenKey(theKey) == YES)
             {
-                [self setNumberOnScreen:0];
+                [self clearScreen:theKey];
             } else
                 NSLog(@"Uncovered argument '%c' in %@ message received by object at %p (%@)", theKey, NSStringFromSelector(_cmd), self, self);
     return;
@@ -59,6 +59,11 @@ bool isClearScreenKey(char theChar)
     int digit = charDigit - '0';
     int newNumber = nos*10 + digit;
     [self setNumberOnScreen:newNumber];
+}
+
+-(void) clearScreen: (char) screenClearer
+{
+    [self setNumberOnScreen:0];
 }
 
 @end

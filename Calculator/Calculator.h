@@ -8,6 +8,7 @@
 -(void) pressKey: (char) theKey;
 bool isADigit(char someChar);
 bool isClearScreenKey(char theChar);
--(void) appendDigit: (char) number;
+-(void) appendDigit: (char) charDigit;
+-(void) clearScreen: (char) screanClearer;
 
 @end
