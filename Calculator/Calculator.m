@@ -4,6 +4,9 @@
 @synthesize numberOnScreen;
 @synthesize numberAccumulated;
 @synthesize operationPending;
+@synthesize _DNU_numberOnScreen;
+@synthesize _DNU_numberAccumulated;
+@synthesize _DNU_operationPending;
 
 -(void) pressKey: (char) theKey
 {
@@ -25,7 +28,9 @@
     self = [super init];
     if (self)
     {
-        //Set up initial calculator conditions here
+        _DNU_numberOnScreen = 0;
+        _DNU_numberAccumulated = 0;
+        _DNU_operationPending = '+';
     }
     return self;
 }
