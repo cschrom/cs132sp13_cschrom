@@ -70,3 +70,12 @@ bool isClearScreenKey(char theChar)
     }   else
         return NO;
 }
+
+bool isClearAllKey(char AllClear)
+{
+    if (AllClear == 'A' || AllClear == 'a')
+    {
+        return YES;
+    } else
+        return NO;
+}

@@ -14,3 +14,4 @@
 
 bool isADigit(char someChar);
 bool isClearScreenKey(char theChar);
+bool isClearAllKey(char AllClear);
