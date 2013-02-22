@@ -12,8 +12,17 @@
         } else if (isClearScreenKey(theKey) == YES)
             {
                 [self clearScreen:theKey];
-            } else
-                NSLog(@"Uncovered argument '%c' in %@ message received by object at %p (%@)", theKey, NSStringFromSelector(_cmd), self, self);
+            } else if (isResultKey(theKey) == YES)
+            {
+                [self computeAndDisplayResult];
+            } else if (isArithmeticAllKey(theKey) == YES)
+            {
+                [self registerArithmetic:theKey];
+            } else if (isClearAllKey(theKey) == YES);
+            {
+                [self clearAccumulator:theKey];
+                [self clearOperation:theKey];
+            }
     return;
 }
 
@@ -49,30 +58,26 @@
 
 -(void) registerArithmetic: (char) theOperator
 {
-    _numberAccumulated = _numberOnScreen + _numberAccumulated
-    ;
+    _numberAccumulated = _numberOnScreen;
     [self clearScreen:0];
     [self setOperationPending:theOperator];
 }
 
 -(void) computeAndDisplayResult
 {
-    int numAcc = _numberAccumulated;
-    int nos = _numberOnScreen;
-    
     if (_operationPending == '+')
     {
-        nos = numAcc + nos;
+        _numberOnScreen = _numberAccumulated + _numberOnScreen;
     } else if (_operationPending == '-')
     {
-        nos = numAcc - nos;
+        _numberOnScreen = _numberAccumulated - _numberOnScreen;
     } else if (_operationPending == '*')
     {
-        nos = numAcc * nos;
+        _numberOnScreen = _numberAccumulated * _numberOnScreen;
     } else if (_operationPending == '/')
     {
-        nos = numAcc / nos;
-    } else nos = nos;
+        _numberOnScreen = _numberAccumulated / _numberOnScreen;
+    }
     
     [self clearAccumulator:0];
     [self clearOperation:'?'];
