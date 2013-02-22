@@ -81,6 +81,16 @@
     [self setOperationPending:'?'];
 }
 
+-(void) clearAccumulator: (char) accumulatorClearer;
+{
+    [self setNumberAccumulated:0];
+}
+
+-(void) clearOperator: (char) operatorClearer;
+{
+    [self setOperationPending:'?'];
+}
+
 @end
 
 bool isADigit(char someChar)

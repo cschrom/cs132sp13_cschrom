@@ -11,6 +11,8 @@
 -(void) clearScreen: (char) screanClearer;
 -(void) registerArithmetic: (char) theOperator;
 -(void) computeAndDisplayResult;
+-(void) clearAccumulator: (char) accumulatorClearer;
+-(void) clearOperator: (char) operatorClearer;
 
 @end
 
