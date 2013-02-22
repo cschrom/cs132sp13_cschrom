@@ -51,6 +51,13 @@
     [self setNumberOnScreen:0];
 }
 
+-(void) registerArithmetic: (char) theOperator
+{
+    _DNU_numberAccumulated = _DNU_numberOnScreen + _DNU_numberAccumulated;
+    [self setNumberOnScreen:0];
+    [self setOperationPending:theOperator];
+}
+
 @end
 
 bool isADigit(char someChar)

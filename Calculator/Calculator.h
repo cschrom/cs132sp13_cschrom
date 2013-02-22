@@ -9,6 +9,7 @@
 -(void) pressKey: (char) theKey;
 -(void) appendDigit: (char) charDigit;
 -(void) clearScreen: (char) screanClearer;
+-(void) registerArithmetic: (char) theOperator;
 
 @end
 
