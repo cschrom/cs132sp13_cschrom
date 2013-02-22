@@ -79,3 +79,12 @@ bool isClearAllKey(char AllClear)
     } else
         return NO;
 }
+
+bool isResultKey(char resultKey)
+{
+    if (resultKey == '=')
+    {
+        return YES;
+    }   else
+        return NO;
+}
