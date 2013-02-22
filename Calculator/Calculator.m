@@ -1,10 +1,6 @@
 #import "Calculator.h"
 
 @implementation Calculator
-@synthesize numberOnScreen = _DNU_numberOnScreen;
-@synthesize numberAccumulated = _DNU_numberAccumulated;
-@synthesize operationPending = _DNU_operationPending;
-
 
 -(void) pressKey: (char) theKey
 {
@@ -26,16 +22,16 @@
     self = [super init];
     if (self)
     {
-        _DNU_numberOnScreen = 0;
-        _DNU_numberAccumulated = 0;
-        _DNU_operationPending = '?';
+        _numberOnScreen = 0;
+        _numberAccumulated = 0;
+        _operationPending = '?';
     }
     return self;
 }
 
 -(NSString*) description
 {
-    return [NSString stringWithFormat:@"Calculator with %d on screen.", _DNU_numberOnScreen];
+    return [NSString stringWithFormat:@"Calculator with %d on screen.", _numberOnScreen];
 }
 
 -(void) appendDigit: (char) charDigit
@@ -53,32 +49,33 @@
 
 -(void) registerArithmetic: (char) theOperator
 {
-    _DNU_numberAccumulated = _DNU_numberOnScreen + _DNU_numberAccumulated;
-    [self setNumberOnScreen:0];
+    _numberAccumulated = _numberOnScreen + _numberAccumulated
+    ;
+    [self clearScreen];
     [self setOperationPending:theOperator];
 }
 
 -(void) computeAndDisplayResult
 {
-    int numAcc = _DNU_numberAccumulated;
-    int nos = _DNU_numberOnScreen;
+    int numAcc = _numberAccumulated;
+    int nos = _numberOnScreen;
     
-    if (_DNU_operationPending == '+')
+    if (_operationPending == '+')
     {
         nos = numAcc + nos;
-    } else if (_DNU_operationPending == '-')
+    } else if (_operationPending == '-')
     {
         nos = numAcc - nos;
-    } else if (_DNU_operationPending == '*')
+    } else if (_operationPending == '*')
     {
         nos = numAcc * nos;
-    } else if (_DNU_operationPending == '/')
+    } else if (_operationPending == '/')
     {
         nos = numAcc / nos;
     } else nos = nos;
     
-    [self setNumberAccumulated:0];
-    [self setOperationPending:'?'];
+    [self clearAccumulator];
+    [self clearOperation];
 }
 
 -(void) clearAccumulator: (char) accumulatorClearer;
@@ -86,7 +83,7 @@
     [self setNumberAccumulated:0];
 }
 
--(void) clearOperator: (char) operatorClearer;
+-(void) clearOperation: (char) operationClearer;
 {
     [self setOperationPending:'?'];
 }
