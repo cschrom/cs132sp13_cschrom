@@ -28,7 +28,7 @@
     {
         _DNU_numberOnScreen = 0;
         _DNU_numberAccumulated = 0;
-        _DNU_operationPending = '+';
+        _DNU_operationPending = '?';
     }
     return self;
 }
@@ -56,6 +56,29 @@
     _DNU_numberAccumulated = _DNU_numberOnScreen + _DNU_numberAccumulated;
     [self setNumberOnScreen:0];
     [self setOperationPending:theOperator];
+}
+
+-(void) computeAndDisplayResult
+{
+    int numAcc = _DNU_numberAccumulated;
+    int nos = _DNU_numberOnScreen;
+    
+    if (_DNU_operationPending == '+')
+    {
+        nos = numAcc + nos;
+    } else if (_DNU_operationPending == '-')
+    {
+        nos = numAcc - nos;
+    } else if (_DNU_operationPending == '*')
+    {
+        nos = numAcc * nos;
+    } else if (_DNU_operationPending == '/')
+    {
+        nos = numAcc / nos;
+    } else nos = nos;
+    
+    [self setNumberAccumulated:0];
+    [self setOperationPending:'?'];
 }
 
 @end
