@@ -88,3 +88,11 @@ bool isResultKey(char resultKey)
     }   else
         return NO;
 }
+
+bool isArithmeticAllKey(char arithmetic)
+{
+    if(arithmetic == '+' || arithmetic == '-' || arithmetic == '*' || arithmetic == '/')
+    {
+        return YES;
+    } else return NO;
+}
