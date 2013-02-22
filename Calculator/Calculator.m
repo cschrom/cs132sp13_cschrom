@@ -51,7 +51,7 @@
 {
     _numberAccumulated = _numberOnScreen + _numberAccumulated
     ;
-    [self clearScreen];
+    [self clearScreen:0];
     [self setOperationPending:theOperator];
 }
 
@@ -74,8 +74,8 @@
         nos = numAcc / nos;
     } else nos = nos;
     
-    [self clearAccumulator];
-    [self clearOperation];
+    [self clearAccumulator:0];
+    [self clearOperation:'?'];
 }
 
 -(void) clearAccumulator: (char) accumulatorClearer;
