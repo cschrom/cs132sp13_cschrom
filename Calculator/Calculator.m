@@ -1,12 +1,10 @@
 #import "Calculator.h"
 
 @implementation Calculator
-@synthesize numberOnScreen;
-@synthesize numberAccumulated;
-@synthesize operationPending;
-@synthesize _DNU_numberOnScreen;
-@synthesize _DNU_numberAccumulated;
-@synthesize _DNU_operationPending;
+@synthesize numberOnScreen = _DNU_numberOnScreen;
+@synthesize numberAccumulated = _DNU_numberAccumulated;
+@synthesize operationPending = _DNU_operationPending;
+
 
 -(void) pressKey: (char) theKey
 {
@@ -37,8 +35,23 @@
 
 -(NSString*) description
 {
-    return [NSString stringWithFormat:@"Calculator with %d on screen.", numberOnScreen];
+    return [NSString stringWithFormat:@"Calculator with %d on screen.", _DNU_numberOnScreen];
 }
+
+-(void) appendDigit: (char) charDigit
+{
+    int nos = [self numberOnScreen];
+    int digit = charDigit - '0';
+    int newNumber = nos*10 + digit;
+    [self setNumberOnScreen:newNumber];
+}
+
+-(void) clearScreen: (char) screenClearer
+{
+    [self setNumberOnScreen:0];
+}
+
+@end
 
 bool isADigit(char someChar)
 {
@@ -57,18 +70,3 @@ bool isClearScreenKey(char theChar)
     }   else
         return NO;
 }
-
--(void) appendDigit: (char) charDigit
-{
-    int nos = [self numberOnScreen];
-    int digit = charDigit - '0';
-    int newNumber = nos*10 + digit;
-    [self setNumberOnScreen:newNumber];
-}
-
--(void) clearScreen: (char) screenClearer
-{
-    [self setNumberOnScreen:0];
-}
-
-@end
