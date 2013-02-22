@@ -58,25 +58,34 @@
 
 -(void) registerArithmetic: (char) theOperator
 {
-    _numberAccumulated = _numberOnScreen;
+    [self setNumberAccumulated:_numberOnScreen];
     [self clearScreen:0];
     [self setOperationPending:theOperator];
 }
 
 -(void) computeAndDisplayResult
 {
-    if (_operationPending == '+')
+    switch (_operationPending)
     {
-        _numberOnScreen = _numberAccumulated + _numberOnScreen;
-    } else if (_operationPending == '-')
-    {
-        _numberOnScreen = _numberAccumulated - _numberOnScreen;
-    } else if (_operationPending == '*')
-    {
-        _numberOnScreen = _numberAccumulated * _numberOnScreen;
-    } else if (_operationPending == '/')
-    {
-        _numberOnScreen = _numberAccumulated / _numberOnScreen;
+        case '+':
+            _numberOnScreen = _numberAccumulated + _numberOnScreen;
+            break;
+            
+        case '-':
+            _numberOnScreen = _numberAccumulated - _numberOnScreen;
+            break;
+            
+            
+        case '*':
+            _numberOnScreen = _numberAccumulated * _numberOnScreen;
+            break;
+            
+        case '/':
+            _numberOnScreen = _numberAccumulated / _numberOnScreen;
+            break;
+            
+        default:
+            break;
     }
     
     [self clearAccumulator:0];
