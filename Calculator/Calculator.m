@@ -22,7 +22,7 @@
             {
                 [self clearAccumulator:theKey];
                 [self clearOperation:theKey];
-            }
+            } else NSLog(@"STUB response to '%@' message received by object at %p (%@)", NSStringFromSelector(_cmd), self, self);
     return;
 }
 
@@ -65,29 +65,34 @@
 
 -(void) computeAndDisplayResult
 {
-    switch (_operationPending)
+    int nos = [self numberOnScreen];
+    int numAcc = [self numberAccumulated];
+    int result = 0;
+    
+    switch ([self operationPending])
     {
         case '+':
-            _numberOnScreen = _numberAccumulated + _numberOnScreen;
+            result = numAcc + nos;
             break;
             
         case '-':
-            _numberOnScreen = _numberAccumulated - _numberOnScreen;
+            result = numAcc - nos;
             break;
             
             
         case '*':
-            _numberOnScreen = _numberAccumulated * _numberOnScreen;
+            result = numAcc * nos;
             break;
             
         case '/':
-            _numberOnScreen = _numberAccumulated / _numberOnScreen;
+            result = numAcc / nos;
             break;
             
         default:
             break;
     }
     
+    [self setNumberOnScreen:result];
     [self clearAccumulator:0];
     [self clearOperation:'?'];
 }
@@ -140,9 +145,9 @@ bool isResultKey(char resultKey)
         return NO;
 }
 
-bool isArithmeticAllKey(char arithmetic)
+bool isArithmeticAllKey(char theOperator)
 {
-    if(arithmetic == '+' || arithmetic == '-' || arithmetic == '*' || arithmetic == '/')
+    if(theOperator == '+' || theOperator == '-' || theOperator == '*' || theOperator == '/')
     {
         return YES;
     } else return NO;
