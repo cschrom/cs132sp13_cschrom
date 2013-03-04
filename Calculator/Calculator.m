@@ -22,7 +22,7 @@
             {
                 [self clearAccumulator:theKey];
                 [self clearOperation:theKey];
-            } else NSLog(@"uncovered argument '%c' response to '%@' message received by object at %p (%@)", theKey, NSStringFromSelector(_cmd), self, self);
+            } //else NSLog(@"uncovered argument '%c' response to '%@' message received by object at %p (%@)", theKey, NSStringFromSelector(_cmd), self, self);
     return;
 }
 
