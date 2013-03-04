@@ -6,7 +6,7 @@
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
-         continueAfterRunningActions = "No"
+         continueAfterRunningActions = "Yes"
          filePath = "Calculator.m"
          timestampString = "384056115.361902"
          startingColumnNumber = "9223372036854775807"
@@ -15,6 +15,14 @@
          endingLineNumber = "31"
          landmarkName = "-init"
          landmarkType = "5">
+         <Actions>
+            <BreakpointActionProxy
+               ActionType = "Xcode.BreakpointAction.DebuggerCommand">
+               <ActionContent
+                  consoleCommand = "NSLog(@&quot;\t\t\t%s\t%s\t%s\n&quot;, &quot;LHS&quot;, &quot;Op&quot;, &quot;RHS&quot;)">
+               </ActionContent>
+            </BreakpointActionProxy>
+         </Actions>
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
