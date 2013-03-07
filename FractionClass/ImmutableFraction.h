@@ -9,5 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ImmutableFraction : NSObject
+@property (readonly) numerator;
+@property (readonly) denominator;
+
 
 @end
