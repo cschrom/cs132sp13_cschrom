@@ -10,4 +10,14 @@
 
 @implementation ImmutableFraction
 
+-(id) init
+{
+    return Nil;
+}
+
+-(NSString*) description
+{
+    
+}
+
 @end
