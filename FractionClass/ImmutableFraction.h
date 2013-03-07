@@ -12,5 +12,7 @@
 @property (readonly) numerator;
 @property (readonly) denominator;
 
+-initWithNumerator: andDenominator: (int num, int denom);
+-initWithFraction: FractPtr;
 
 @end
