@@ -20,4 +20,44 @@
     
 }
 
+-(FractPtr) negative
+{
+    return Nil;
+}
+
+-(FractPtr) reciprocal
+{
+    return Nil;
+}
+
+-(FractPtr) sumWith
+{
+    return Nil;
+}
+
+-(FractPtr) subtractFrom
+{
+    return Nil;
+}
+
+-(FractPtr) minus
+{
+    return Nil;
+}
+
+-(FractPtr) multiplyBy
+{
+    return Nil;
+}
+
+-(FractPtr) divideBy
+{
+    return Nil;
+}
+
+-(FractPtr) DivideInto
+{
+    return Nil;
+}
+
 @end
