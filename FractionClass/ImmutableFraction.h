@@ -16,5 +16,7 @@
 -initWithFraction: FractPtr;
 
 -(float) someFloat;
+-(FractPtr) negative;
+-(FractPtr) reciprocal;
 
 @end
