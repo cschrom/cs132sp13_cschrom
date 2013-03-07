@@ -18,5 +18,11 @@
 -(float) someFloat;
 -(FractPtr) negative;
 -(FractPtr) reciprocal;
+-(FractPtr) sumWith;
+-(FractPtr) subtractFrom;
+-(FractPtr) minus;
+-(FractPtr) multiplyBy;
+-(FractPtr) divideBy;
+-(FractPtr) DivideInto;
 
 @end
