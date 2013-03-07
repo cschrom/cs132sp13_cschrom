@@ -60,4 +60,9 @@
     return Nil;
 }
 
+int GCD(int x, int y)
+{
+    return 0;
+}
+
 @end
