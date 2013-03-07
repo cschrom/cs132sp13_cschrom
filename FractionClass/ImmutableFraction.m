@@ -65,4 +65,9 @@ int GCD(int x, int y)
     return 0;
 }
 
+-(FractPtr) add
+{
+    a/b + c/d = ((a*d) + (b/c)) / (b * d)
+}
+
 @end

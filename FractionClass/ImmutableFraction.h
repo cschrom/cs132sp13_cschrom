@@ -15,6 +15,7 @@
 -initWithNumerator: andDenominator: (int num, int denom);
 -initWithFraction: FractPtr;
 int GCD(int x, int y);
+-(void) add: (Fraction *);
 
 -(float) someFloat;
 -(FractPtr) negative;
