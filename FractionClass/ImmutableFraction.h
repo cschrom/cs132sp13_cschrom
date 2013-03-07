@@ -15,4 +15,6 @@
 -initWithNumerator: andDenominator: (int num, int denom);
 -initWithFraction: FractPtr;
 
+-(float) someFloat;
+
 @end
