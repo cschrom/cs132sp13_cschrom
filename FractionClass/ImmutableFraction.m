@@ -42,11 +42,12 @@
 {
     int resultNum;
     int resultDenom;
+    int result;
     
     resultNum = (numerator * denominator) + (denominator * f.numerator);
     resultDenom = denominator * denominator;
     
-    [result setTo: resultNum / resultDenom];
+    [self setResult: resultNum / resultDenom];
     [result reduced];
     
     return result;
@@ -61,11 +62,12 @@
 {
     int resultNum;
     int resultDenom;
+    int result;
     
     resultNum = numerator * denominator - denominator * numerator;
     resultDenom = denominator * denominator;
     
-    [result setTo: resultNum / resultDenom];
+    [self setResult: resultNum / resultDenom];
     [result reduce];
     
     return result;
@@ -75,11 +77,12 @@
 {
     int resultNum;
     int resultDenom;
+    int result;
     
     resultDenom = numerator * numerator;
     resultDenom = denominator * denominator;
     
-    [result setTo: resultNum / resultDenom];
+    [self setResult: resultNum / resultDenom];
     [result reduce];
     
     return result;
@@ -87,7 +90,7 @@
 
 -(FractPtr) divideBy
 {
-    return Nil;
+    
 }
 
 -(FractPtr) DivideInto
