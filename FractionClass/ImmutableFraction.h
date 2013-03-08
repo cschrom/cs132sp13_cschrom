@@ -9,21 +9,21 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ImmutableFraction : NSObject
-@property (readonly) numerator;
-@property (readonly) denominator;
+@property (int readonly) numerator;
+@property (int readonly) denominator;
 
 -initWithNumerator: andDenominator: (int num, int denom);
 -initWithFraction: FractPtr;
 int GCD(int x, int y);
--(void) add: (Fraction *);
 
 -(float) someFloat;
 -(FractPtr) negative;
 -(FractPtr) reciprocal;
--(FractPtr) sumWith;
+-(FractPtr) reduced;
+-(FractPtr) add;
 -(FractPtr) subtractFrom;
 -(FractPtr) minus;
--(FractPtr) multiplyBy;
+-(FractPtr) multiply;
 -(FractPtr) divideBy;
 -(FractPtr) DivideInto;
 

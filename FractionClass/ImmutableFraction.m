@@ -12,6 +12,8 @@
 
 -(id) init
 {
+    int numerator = 0;
+    int denominator = 1;
     return Nil;
 }
 
@@ -22,17 +24,31 @@
 
 -(FractPtr) negative
 {
-    return Nil;
+    
 }
 
 -(FractPtr) reciprocal
 {
+    [self setNumerator: denominator];
+    [self setDenominator: numerator];
+}
+
+-(FractPtr) reduced
+{
     return Nil;
 }
 
--(FractPtr) sumWith
+-(FractPtr) add
 {
-    return Nil;
+    int resultNum;
+    int resultDenom;
+    
+    resultNum = (numerator * denominator) + (denominator * f.numerator);
+    resultDenom = denominator * denominator;
+    
+    [result setTo: resultNum over: resultDenom];
+    [result reduced];
+    return result;
 }
 
 -(FractPtr) subtractFrom
@@ -45,7 +61,7 @@
     return Nil;
 }
 
--(FractPtr) multiplyBy
+-(FractPtr) multiply
 {
     return Nil;
 }
@@ -63,11 +79,6 @@
 int GCD(int x, int y)
 {
     return 0;
-}
-
--(FractPtr) add
-{
-    a/b + c/d = ((a*d) + (b/c)) / (b * d)
 }
 
 @end
