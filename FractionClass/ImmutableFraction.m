@@ -46,8 +46,9 @@
     resultNum = (numerator * denominator) + (denominator * f.numerator);
     resultDenom = denominator * denominator;
     
-    [result setTo: resultNum over: resultDenom];
+    [result setTo: resultNum / resultDenom];
     [result reduced];
+    
     return result;
 }
 
@@ -58,7 +59,16 @@
 
 -(FractPtr) minus
 {
-    return Nil;
+    int resultNum;
+    int resultDenom;
+    
+    resultNum = numerator * denominator - denominator * numerator;
+    resultDenom = denominator * denominator;
+    
+    [result setTo: resultNum / resultDenom];
+    [result reduce];
+    
+    return result;
 }
 
 -(FractPtr) multiply
