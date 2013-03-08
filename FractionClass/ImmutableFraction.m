@@ -73,7 +73,16 @@
 
 -(FractPtr) multiply
 {
-    return Nil;
+    int resultNum;
+    int resultDenom;
+    
+    resultDenom = numerator * numerator;
+    resultDenom = denominator * denominator;
+    
+    [result setTo: resultNum / resultDenom];
+    [result reduce];
+    
+    return result;
 }
 
 -(FractPtr) divideBy
