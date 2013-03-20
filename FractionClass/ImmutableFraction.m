@@ -24,13 +24,31 @@
 
 -(FractPtr) negative
 {
+    int resultNum;
+    int resultDenom;
+    int result;
     
+    [self setResultNum: -resultNum];
+    
+    [self setResult: resultNum / resultDenom];
+    [result reduced];
+    
+    return result;
 }
 
 -(FractPtr) reciprocal
 {
-    [self setNumerator: denominator];
-    [self setDenominator: numerator];
+    int resultNum;
+    int resultDenom;
+    int result;
+    
+    [self setResultNum: resultDenom];
+    [self setResultDenom: resultNum];
+    
+    [self setResult: resultNum / resultDenom];
+    [result reduced];
+    
+    return result;
 }
 
 -(FractPtr) reduced
@@ -38,14 +56,14 @@
     return Nil;
 }
 
--(FractPtr) add
+-(FractPtr) addTo
 {
     int resultNum;
     int resultDenom;
     int result;
     
-    resultNum = (numerator * denominator) + (denominator * f.numerator);
-    resultDenom = denominator * denominator;
+    [self setResultNum: (numerator * denominator) + (denominator * numerator)];
+    [self setResultDenom: denominator * denominator];
     
     [self setResult: resultNum / resultDenom];
     [result reduced];
@@ -64,23 +82,23 @@
     int resultDenom;
     int result;
     
-    resultNum = numerator * denominator - denominator * numerator;
-    resultDenom = denominator * denominator;
+    [self setResultNum: numerator * denominator - denominator * numerator];
+    [self setResultDenom: denominator * denominator];
     
     [self setResult: resultNum / resultDenom];
-    [result reduce];
+    [result reduced];
     
     return result;
 }
 
--(FractPtr) multiply
+-(FractPtr) multiplyBy
 {
     int resultNum;
     int resultDenom;
     int result;
     
-    resultDenom = numerator * numerator;
-    resultDenom = denominator * denominator;
+    [self setResultDenom: numerator * numerator];
+    [self setResultDenom: denominator * denominator];
     
     [self setResult: resultNum / resultDenom];
     [result reduce];
