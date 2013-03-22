@@ -28,9 +28,9 @@
     int resultDenom;
     int result;
     
-    [self setResultNum: -resultNum];
+    [self setResultNum: -numerator];
     
-    [self setResult: resultNum / resultDenom];
+    [self setResult: resultNum / denominator];
     [result reduced];
     
     return result;
@@ -42,8 +42,8 @@
     int resultDenom;
     int result;
     
-    [self setResultNum: resultDenom];
-    [self setResultDenom: resultNum];
+    [self setResultNum: denominator];
+    [self setResultDenom: numerator];
     
     [self setResult: resultNum / resultDenom];
     [result reduced];
@@ -53,7 +53,7 @@
 
 -(FractPtr) reduced
 {
-    return Nil;
+    int GCD(int x, int y);
 }
 
 -(FractPtr) addTo
@@ -73,7 +73,17 @@
 
 -(FractPtr) subtractFrom
 {
-    return Nil;
+    int resultNum;
+    int resultDenom;
+    int result;
+    
+    [self setResultNum: numerator * denominator - denominator * numerator];
+    [self setResultDenom: denominator * denominator];
+    
+    [self setResult: resultNum / resultDenom];
+    [result reduced];
+    
+    return result;
 }
 
 -(FractPtr) minus
@@ -101,19 +111,39 @@
     [self setResultDenom: denominator * denominator];
     
     [self setResult: resultNum / resultDenom];
-    [result reduce];
+    [result reduced];
     
     return result;
 }
 
 -(FractPtr) divideBy
 {
+    int resultNum;
+    int resultDenom;
+    int result;
     
+    [self setResultNum: numerator * denominator];
+    [self setResultDenom: denominator * numerator];
+    
+    [self setResult: resultNum / resultDenom];
+    [result reduced];
+    
+    return result;
 }
 
 -(FractPtr) DivideInto
 {
-    return Nil;
+    int resultNum;
+    int resultDenom;
+    int result;
+    
+    [self setResultNum: numerator * denominator];
+    [self setResultDenom: denominator * numerator];
+    
+    [self setResult: resultNum / resultDenom];
+    [result reduced];
+    
+    return result;
 }
 
 int GCD(int x, int y)
