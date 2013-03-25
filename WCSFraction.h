@@ -9,5 +9,21 @@
 #import <Foundation/Foundation.h>
 
 @interface WCSFraction : NSObject
+@property (readonly) int numerator;
+@property (readonly) int denominator;
 
+-initWithNumerator:andDenominator: (int num, int denom);
+-initWithFraction: FractPtr;
+int GCD(int x, int y);
+
+-(float) someFloat;
+-(FractPtr) negative;
+-(FractPtr) reciprocal;
+-(FractPtr) reduced;
+-(FractPtr) add;
+-(FractPtr) subtractFrom;
+-(FractPtr) minus;
+-(FractPtr) multiply;
+-(FractPtr) divideBy;
+-(FractPtr) DivideInto;
 @end
