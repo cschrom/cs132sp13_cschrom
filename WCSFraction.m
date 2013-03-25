@@ -10,11 +10,16 @@
 
 @implementation WCSFraction
 
--(id) init
+-(id) initWithNumerator:(id)andDenominator
 {
     int numerator = 0;
     int denominator = 1;
     return Nil;
+}
+
+-(id) initWithFraction:(id)FractPtr
+{
+    
 }
 
 -(NSString*) description
@@ -77,8 +82,8 @@
     int resultDenom;
     int result;
     
-    [self setResultNum: numerator * denominator - denominator * numerator];
-    [self setResultDenom: denominator * denominator];
+    [self setResultNum: _numerator * _denominator - _denominator * _numerator];
+    [self setResultDenom: _denominator * _denominator];
     
     [self setResult: resultNum / resultDenom];
     [result reduced];
@@ -92,8 +97,8 @@
     int resultDenom;
     int result;
     
-    [self setResultNum: numerator * denominator - denominator * numerator];
-    [self setResultDenom: denominator * denominator];
+    [self setResultNum: _numerator * _denominator - _denominator * _numerator];
+    [self setResultDenom: _denominator * _denominator];
     
     [self setResult: resultNum / resultDenom];
     [result reduced];
@@ -107,8 +112,8 @@
     int resultDenom;
     int result;
     
-    [self setResultDenom: numerator * numerator];
-    [self setResultDenom: denominator * denominator];
+    [self setResultDenom: _numerator * _numerator];
+    [self setResultDenom: _denominator * _denominator];
     
     [self setResult: resultNum / resultDenom];
     [result reduced];
@@ -122,8 +127,8 @@
     int resultDenom;
     int result;
     
-    [self setResultNum: numerator * denominator];
-    [self setResultDenom: denominator * numerator];
+    [self setResultNum: _numerator * _denominator];
+    [self setResultDenom: _denominator * _numerator];
     
     [self setResult: resultNum / resultDenom];
     [result reduced];
@@ -137,8 +142,8 @@
     int resultDenom;
     int result;
     
-    [self setResultNum: numerator * denominator];
-    [self setResultDenom: denominator * numerator];
+    [self setResultNum: _numerator * _denominator];
+    [self setResultDenom: _denominator * _numerator];
     
     [self setResult: resultNum / resultDenom];
     [result reduced];
