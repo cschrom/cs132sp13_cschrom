@@ -9,11 +9,14 @@
 #import "WCSFraction.h"
 
 @implementation WCSFraction
+@synthesize numerator = _DNU_numeratator;
+@synthesize denominator = _DNU_dinominatator;
 
--(id) initWithNumerator:(id)andDenominator
+-(id) initWithNumerator:(int num)
+     (id)andDenominator:(int denom);
 {
-    int numerator = 0;
-    int denominator = 1;
+    _DNU_numeratator = 0;
+    _DNU_dinominatator = 0;
     return Nil;
 }
 
@@ -26,38 +29,35 @@
     return nil;
 }
 
--(FractPtr) negative
+-(WCSFraction*) negative
 {
     int resultNum = [self numerator];
     int resultDenom = [self denominator];
-    Fract* result;
+    WCSFraction* result;
     
-    resultNum = -resultNum;
+    result = [[WCSFraction alloc] initWithNumerator:resultNum];
     
     result = resultNum / resultDenom;
-    [result reduced];
     
-    return result;
+    return [result reduced];
 }
 
--(FractPtr) reciprocal
+-(WCSFraction*) reciprocal
 {
     int resultNum = [self denominator];
     int resultDenom = [self numerator];
-    Fract* result;
+    WCSFraction* result;
     
     result = resultNum / resultDenom;
-    [result reduced];
-    
-    return result;
+    return [result reduced];
 }
 
--(FractPtr) reduced
+-(WCSFraction*) reduced
 {
     int GCD(int x, int y);
 }
 
--(FractPtr) addTo
+-(WCSFraction*) addTo
 {
     int a = [self numerator];
     int b = [self numerator];
@@ -65,18 +65,16 @@
     int d = [self denominator];
     int resultNum;
     int resultDenom;
-    Fract* result;
+    WCSFraction* result;
     
     resultNum = (a * c) + (d * b);
     resultDenom = c * d;
     
     result = resultNum / resultDenom;
-    [result reduced];
-    
-    return result;
+    return [result reduced];
 }
 
--(FractPtr) subtractFrom
+-(WCSFraction*) subtractFrom
 {
     int a = [self numerator];
     int b = [self numerator];
@@ -84,18 +82,16 @@
     int d = [self denominator];
     int resultNum;
     int resultDenom;
-    Fract* result;
+    WCSFraction* result;
     
     resultNum = a * c - b * d;
     resultDenom = c * d;
     
     result = resultNum / resultDenom;
-    [result reduced];
-    
-    return result;
+    return [result reduced];
 }
 
--(FractPtr) minus
+-(WCSFraction*) minus
 {
     int a = [self numerator];
     int b = [self numerator];
@@ -103,18 +99,16 @@
     int d = [self denominator];
     int resultNum;
     int resultDenom;
-    Fract* result;
+    WCSFraction* result;
     
     resultNum = (a * c) - (d * b);
     resultDenom = c * d;
     
     result = resultNum / resultDenom;
-    [result reduced];
-    
-    return result;
+    return [result reduced];
 }
 
--(FractPtr) multiplyBy
+-(WCSFraction*) multiplyBy
 {
     int a = [self numerator];
     int b = [self numerator];
@@ -122,18 +116,16 @@
     int d = [self denominator];
     int resultNum;
     int resultDenom;
-    Fract* result;
+    WCSFraction* result;
     
     resultNum = a * b;
     resultDenom: c * d;
     
     result = resultNum / resultDenom;
-    [result reduced];
-    
-    return result;
+    return [result reduced];
 }
 
--(FractPtr) divideBy
+-(WCSFraction*) divideBy
 {
     int a = [self numerator];
     int b = [self numerator];
@@ -141,18 +133,16 @@
     int d = [self denominator];
     int resultNum;
     int resultDenom;
-    Fract* result;
+    WCSFraction* result;
     
     resultNum = a * d;
     resultDenom: c * b;
     
     result = resultNum / resultDenom;
-    [result reduced];
-    
-    return result;
+    return [result reduced];
 }
 
--(FractPtr) DivideInto
+-(WCSFraction*) DivideInto
 {
     int a = [self numerator];
     int b = [self numerator];
@@ -160,15 +150,13 @@
     int d = [self denominator];
     int resultNum;
     int resultDenom;
-    Fract* result;
+    WCSFraction* result;
     
     resultNum = b * c;
     resultDenom = d * a;
     
     result = resultNum / resultDenom;
-    [result reduced];
-    
-    return result;
+    return [result reduced];
 }
 
 int GCD(int x, int y)

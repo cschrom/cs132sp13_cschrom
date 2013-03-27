@@ -12,7 +12,8 @@
 @property (readonly) int numerator;
 @property (readonly) int denominator;
 
--initWithNumerator:andDenominator;
+-(id) initWithNumerator:(int num)
+     (id)andDenominator:(int denom);
 -(id) initWithFraction: FractPtr;
 int GCD(int x, int y);
 
