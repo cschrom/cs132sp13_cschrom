@@ -8,12 +8,12 @@
 
 #import "WCSFraction.h"
 
-@implementation WCSFraction
+@implementation WCSFraction: NSObject
 @synthesize numerator = _DNU_numeratator;
 @synthesize denominator = _DNU_dinominatator;
 
--(id) initWithNumerator:(int num)
-     (id)andDenominator:(int denom);
+-(id) initWithNumerator:(int)num
+         andDenominator:(int) denom;
 {
     _DNU_numeratator = 0;
     _DNU_dinominatator = 0;
@@ -24,6 +24,7 @@
 {
     return nil;
 }
+
 -(NSString*) description
 {
     return nil;
@@ -35,9 +36,8 @@
     int resultDenom = [self denominator];
     WCSFraction* result;
     
-    result = [[WCSFraction alloc] initWithNumerator:resultNum];
-    
-    result = resultNum / resultDenom;
+    result = [[WCSFraction alloc] initWithNumerator:-resultNum];
+    result = [[WCSFraction alloc] andDenominator:resultDenom];
     
     return [result reduced];
 }
@@ -119,7 +119,7 @@
     WCSFraction* result;
     
     resultNum = a * b;
-    resultDenom: c * d;
+    resultDenom = c * d;
     
     result = resultNum / resultDenom;
     return [result reduced];

@@ -12,19 +12,19 @@
 @property (readonly) int numerator;
 @property (readonly) int denominator;
 
--(id) initWithNumerator:(int num)
-     (id)andDenominator:(int denom);
+-(id) initWithNumerator:(int)num
+        andDenominator:(int) denom;
 -(id) initWithFraction: FractPtr;
 int GCD(int x, int y);
 
 -(float) someFloat;
--(FractPtr) negative;
--(FractPtr) reciprocal;
--(FractPtr) reduced;
--(FractPtr) add;
--(FractPtr) subtractFrom;
--(FractPtr) minus;
--(FractPtr) multiply;
--(FractPtr) divideBy;
--(FractPtr) DivideInto;
+-(WCSFraction*) negative;
+-(WCSFraction*) reciprocal;
+-(WCSFraction*) reduced;
+-(WCSFraction*) add;
+-(WCSFraction*) subtractFrom;
+-(WCSFraction*) minus;
+-(WCSFraction*) multiply;
+-(WCSFraction*) divideBy;
+-(WCSFraction*) DivideInto;
 @end
