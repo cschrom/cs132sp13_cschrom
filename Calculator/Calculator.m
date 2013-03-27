@@ -147,7 +147,7 @@ bool isResultKey(char resultKey)
 
 bool isArithmeticAllKey(char theOperator)
 {
-    if(theOperator == '+' || theOperator == '-' || theOperator == '*' || theOperator == '/')
+    if(theOperator == '+' || theOperator == '-' || theOperator == '*' || theOperator == '/' || theOperator == '%')
     {
         return YES;
     } else return NO;
