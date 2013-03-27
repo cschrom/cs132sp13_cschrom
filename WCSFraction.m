@@ -19,41 +19,37 @@
 
 -(id) initWithFraction:(id)FractPtr
 {
-    
+    return nil;
 }
-
 -(NSString*) description
 {
-    
+    return nil;
 }
 
 -(FractPtr) negative
 {
-    int resultNum;
-    int resultDenom;
-    int result;
+    int resultNum = [self numerator];
+    int resultDenom = [self denominator];
+    Fract* result;
     
-    [self setResultNum: -_numerator];
+    resultNum = -resultNum;
     
-    [self setResult: resultNum / _denominator];
+    result = resultNum / resultDenom;
     [result reduced];
     
-    return &result;
+    return result;
 }
 
 -(FractPtr) reciprocal
 {
-    int resultNum;
-    int resultDenom;
-    int result;
+    int resultNum = [self denominator];
+    int resultDenom = [self numerator];
+    Fract* result;
     
-    [self setResultNum: _denominator];
-    [self setResultDenom: _numerator];
-    
-    [self setResult: resultNum / resultDenom];
+    result = resultNum / resultDenom;
     [result reduced];
     
-    return &result;
+    return result;
 }
 
 -(FractPtr) reduced
@@ -63,14 +59,18 @@
 
 -(FractPtr) addTo
 {
+    int a = [self numerator];
+    int b = [self numerator];
+    int c = [self denominator];
+    int d = [self denominator];
     int resultNum;
     int resultDenom;
-    int result;
+    Fract* result;
     
-    [self setResultNum: (_numerator * _denominator) + (_denominator * _numerator)];
-    [self setResultDenom: _denominator * _denominator];
+    resultNum = (a * c) + (d * b);
+    resultDenom = c * d;
     
-    [self setResult: resultNum / resultDenom];
+    result = resultNum / resultDenom;
     [result reduced];
     
     return result;
@@ -78,14 +78,18 @@
 
 -(FractPtr) subtractFrom
 {
+    int a = [self numerator];
+    int b = [self numerator];
+    int c = [self denominator];
+    int d = [self denominator];
     int resultNum;
     int resultDenom;
-    int result;
+    Fract* result;
     
-    [self setResultNum: _numerator * _denominator - _denominator * _numerator];
-    [self setResultDenom: _denominator * _denominator];
+    resultNum = a * c - b * d;
+    resultDenom = c * d;
     
-    [self setResult: resultNum / resultDenom];
+    result = resultNum / resultDenom;
     [result reduced];
     
     return result;
@@ -93,14 +97,18 @@
 
 -(FractPtr) minus
 {
+    int a = [self numerator];
+    int b = [self numerator];
+    int c = [self denominator];
+    int d = [self denominator];
     int resultNum;
     int resultDenom;
-    int result;
+    Fract* result;
     
-    [self setResultNum: _numerator * _denominator - _denominator * _numerator];
-    [self setResultDenom: _denominator * _denominator];
+    resultNum = (a * c) - (d * b);
+    resultDenom = c * d;
     
-    [self setResult: resultNum / resultDenom];
+    result = resultNum / resultDenom;
     [result reduced];
     
     return result;
@@ -108,14 +116,18 @@
 
 -(FractPtr) multiplyBy
 {
+    int a = [self numerator];
+    int b = [self numerator];
+    int c = [self denominator];
+    int d = [self denominator];
     int resultNum;
     int resultDenom;
-    int result;
+    Fract* result;
     
-    [self setResultDenom: _numerator * _numerator];
-    [self setResultDenom: _denominator * _denominator];
+    resultNum = a * b;
+    resultDenom: c * d;
     
-    [self setResult: resultNum / resultDenom];
+    result = resultNum / resultDenom;
     [result reduced];
     
     return result;
@@ -123,14 +135,18 @@
 
 -(FractPtr) divideBy
 {
+    int a = [self numerator];
+    int b = [self numerator];
+    int c = [self denominator];
+    int d = [self denominator];
     int resultNum;
     int resultDenom;
-    int result;
+    Fract* result;
     
-    [self setResultNum: _numerator * _denominator];
-    [self setResultDenom: _denominator * _numerator];
+    resultNum = a * d;
+    resultDenom: c * b;
     
-    [self setResult: resultNum / resultDenom];
+    result = resultNum / resultDenom;
     [result reduced];
     
     return result;
@@ -138,14 +154,18 @@
 
 -(FractPtr) DivideInto
 {
+    int a = [self numerator];
+    int b = [self numerator];
+    int c = [self denominator];
+    int d = [self denominator];
     int resultNum;
     int resultDenom;
-    int result;
+    Fract* result;
     
-    [self setResultNum: _numerator * _denominator];
-    [self setResultDenom: _denominator * _numerator];
+    resultNum = b * c;
+    resultDenom = d * a;
     
-    [self setResult: resultNum / resultDenom];
+    result = resultNum / resultDenom;
     [result reduced];
     
     return result;
