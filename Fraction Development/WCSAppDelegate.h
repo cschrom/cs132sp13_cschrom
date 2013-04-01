@@ -8,8 +8,28 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface WCSAppDelegate : NSObject <NSApplicationDelegate>
+@interface WCSFraction : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (readonly) int numerator;
+@property (readonly) int denominator;
+@property int numCalculated;
+@property int denomCalculated;
 
+-(id) initWithNumerator:(int)num
+         andDenominator:(int) denom;
+-(id) initWithFraction: FractPtr;
+int GCD(int x, int y);
+
+-(Fract)convertToFract;
+-(float) someFloat;
+-(WCSFraction*) negative;
+-(WCSFraction*) reciprocal;
+-(WCSFraction*) reduced;
+-(WCSFraction*) addTo;
+-(WCSFraction*) subtractFrom;
+-(WCSFraction*) minus;
+-(WCSFraction*) multiply;
+-(WCSFraction*) divideBy;
+-(WCSFraction*) DivideInto;
 @end
