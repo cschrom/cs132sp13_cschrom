@@ -17,6 +17,9 @@
 {
     _DNU_numeratator = 0;
     _DNU_dinominatator = 0;
+    _numCalculated = 0;
+    _denomCalculated = 0;
+    
     return Nil;
 }
 
@@ -30,6 +33,18 @@
     return nil;
 }
 
+-(float) someFloat;
+{
+    return 0;
+}
+
+-(Fract)convertToFract
+{
+    int result;
+    result = _numCalculated / _denomCalculated;
+    return result;
+}
+
 -(WCSFraction*) negative
 {
     int resultNum = [self numerator];
@@ -38,7 +53,10 @@
     
     result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
     
-    [result resultNum / resultDenom];
+    _numCalculated = resultNum;
+    _denomCalculated = resultDenom;
+    
+    [result convertToFract];
     return [result reduced];
 }
 
@@ -48,13 +66,19 @@
     int resultDenom = [self numerator];
     WCSFraction* result;
     
-    result = resultNum / resultDenom;
+    result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
+    
+    _numCalculated = resultNum;
+    _denomCalculated = resultDenom;
+    
+    [result convertToFract];
     return [result reduced];
 }
 
 -(WCSFraction*) reduced
 {
     int GCD(int x, int y);
+    return nil;
 }
 
 -(WCSFraction*) addTo
@@ -70,7 +94,12 @@
     resultNum = (a * c) + (d * b);
     resultDenom = c * d;
     
-    result = resultNum / resultDenom;
+    result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
+    
+    _numCalculated = resultNum;
+    _denomCalculated = resultDenom;
+    
+    [result convertToFract];
     return [result reduced];
 }
 
@@ -87,7 +116,12 @@
     resultNum = a * c - b * d;
     resultDenom = c * d;
     
-    result = resultNum / resultDenom;
+    result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
+    
+    _numCalculated = resultNum;
+    _denomCalculated = resultDenom;
+    
+    [result convertToFract];
     return [result reduced];
 }
 
@@ -99,16 +133,22 @@
     int d = [self denominator];
     int resultNum;
     int resultDenom;
+    
     WCSFraction* result;
     
     resultNum = (a * c) - (d * b);
     resultDenom = c * d;
     
-    result = resultNum / resultDenom;
+    result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
+    
+    _numCalculated = resultNum;
+    _denomCalculated = resultDenom;
+    
+    [result convertToFract];
     return [result reduced];
 }
 
--(WCSFraction*) multiplyBy
+-(WCSFraction*) multiply
 {
     int a = [self numerator];
     int b = [self numerator];
@@ -121,7 +161,12 @@
     resultNum = a * b;
     resultDenom = c * d;
     
-    result = resultNum / resultDenom;
+    result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
+    
+    _numCalculated = resultNum;
+    _denomCalculated = resultDenom;
+    
+    [result convertToFract];
     return [result reduced];
 }
 
@@ -136,9 +181,14 @@
     WCSFraction* result;
     
     resultNum = a * d;
-    resultDenom: c * b;
+    resultDenom = c * b;
     
-    result = resultNum / resultDenom;
+    result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
+    
+    _numCalculated = resultNum;
+    _denomCalculated = resultDenom;
+    
+    [result convertToFract];
     return [result reduced];
 }
 
@@ -155,7 +205,12 @@
     resultNum = b * c;
     resultDenom = d * a;
     
-    result = resultNum / resultDenom;
+    result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
+    
+    _numCalculated = resultNum;
+    _denomCalculated = resultDenom;
+    
+    [result convertToFract];
     return [result reduced];
 }
 

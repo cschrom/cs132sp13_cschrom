@@ -11,17 +11,20 @@
 @interface WCSFraction : NSObject
 @property (readonly) int numerator;
 @property (readonly) int denominator;
+@property int numCalculated;
+@property int denomCalculated;
 
 -(id) initWithNumerator:(int)num
          andDenominator:(int) denom;
 -(id) initWithFraction: FractPtr;
 int GCD(int x, int y);
 
+-(Fract)convertToFract;
 -(float) someFloat;
 -(WCSFraction*) negative;
 -(WCSFraction*) reciprocal;
 -(WCSFraction*) reduced;
--(WCSFraction*) add;
+-(WCSFraction*) addTo;
 -(WCSFraction*) subtractFrom;
 -(WCSFraction*) minus;
 -(WCSFraction*) multiply;
