@@ -17,7 +17,7 @@
 -(id) initWithNumerator:(int)num
          andDenominator:(int) denom;
 -(id) initWithFraction: FractPtr;
-int GCD(int x, int y);
+int gcd(int a, int b);
 
 -(Fract)convertToFract;
 -(float) someFloat;
@@ -30,4 +30,6 @@ int GCD(int x, int y);
 -(WCSFraction*) multiply;
 -(WCSFraction*) divideBy;
 -(WCSFraction*) DivideInto;
+- (BOOL)isEqual:(id)other;
+-(NSUInteger) hash;
 @end
