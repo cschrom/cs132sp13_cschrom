@@ -77,8 +77,20 @@
 
 -(WCSFraction*) reduced
 {
-    int GCD(int x, int y);
-    return nil;
+    int a = [self numerator];
+    int b = [self denominator];
+    WCSFraction* result;
+    
+    int resultNum =  a / gcd(a, b);
+    int resultDenom = b / gcd(a, b);
+    
+    result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
+    
+    _numCalculated = resultNum;
+    _denomCalculated = resultDenom;
+    
+    [result convertToFract];
+    return [result reduced];
 }
 
 -(WCSFraction*) addTo
