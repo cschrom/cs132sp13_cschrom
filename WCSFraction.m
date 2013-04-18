@@ -10,13 +10,13 @@
 
 @implementation WCSFraction
 @synthesize numerator = _DNU_numeratator;
-@synthesize denominator = _DNU_dinominatator;
+@synthesize denominator = _DNU_denominatator;
 
 -(id) initWithNumerator:(int) num
          andDenominator:(int) denom;
 {
     _DNU_numeratator = 0;
-    _DNU_dinominatator = 0;
+    _DNU_denominatator = 0;
     _numCalculated = 0;
     _denomCalculated = 0;
     

@@ -9,5 +9,11 @@
 #import "WCSFraction.h"
 
 @interface WCSMutableFraction : WCSFraction
+@property (readwrite, assign) int numerator;
+@property (readwrite, assign) int denominator;
+
+-(void) setNumerator:(int)num
+      andDenominator:(int)denom;
+-(void) modifyByAdding:
 
 @end
