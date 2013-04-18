@@ -81,6 +81,11 @@
     int b = [self denominator];
     WCSFraction* result;
     
+    if (b < 0) {
+        int a = [self numerator]*-1;
+        int b = [self denominator]*-1;
+    }
+    
     int resultNum =  a / gcd(a, b);
     int resultDenom = b / gcd(a, b);
     
