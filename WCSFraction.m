@@ -12,7 +12,7 @@
 @synthesize numerator = _DNU_numeratator;
 @synthesize denominator = _DNU_dinominatator;
 
--(id) initWithNumerator:(int)num
+-(id) initWithNumerator:(int) num
          andDenominator:(int) denom;
 {
     _DNU_numeratator = 0;
