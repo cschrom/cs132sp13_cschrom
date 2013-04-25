@@ -81,7 +81,8 @@
     int b = [self denominator];
     WCSFraction* result;
     
-    if (b < 0) {
+    if (b < 0)
+    {
         int a = [self numerator]*-1;
         int b = [self denominator]*-1;
     }
@@ -95,7 +96,7 @@
     _denomCalculated = resultDenom;
     
     [result convertToFract];
-    return [result reduced];
+    return result;
 }
 
 -(WCSFraction*) addTo
@@ -108,7 +109,7 @@
     int resultDenom;
     WCSFraction* result;
     
-    resultNum = (a * c) + (d * b);
+    resultNum = (a * d) + (c * b);
     resultDenom = c * d;
     
     result = [[WCSFraction alloc] initWithNumerator:resultNum andDenominator:resultDenom];
