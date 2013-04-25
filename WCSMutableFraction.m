@@ -29,4 +29,27 @@
     
     [fract reduced];
 }
+
+-(void)modifyByMultiplying:(WCSMutableFraction *)fract
+{
+    int a = [self numerator];
+    int b = [fract numerator];
+    int c = [self denominator];
+    int d = [fract denominator];
+    int resultNum;
+    int resultDenom;
+    
+    resultNum = a * b;
+    resultDenom = c * d;
+    
+    [self setNumerator:resultNum];
+    [self setDenominator:resultDenom];
+    
+    [fract reduced];
+}
+
+-(void)modifyByInverting:(WCSMutableFraction *)fract
+{
+    
+}
 @end
