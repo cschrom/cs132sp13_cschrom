@@ -7,10 +7,21 @@
 //
 
 #import "WCSMutableFraction.h"
+#import "WCSFraction.m"
 
 @implementation WCSMutableFraction
 @synthesize numerator = _AOII_numerator;
 @synthesize denominator = _AOII_denominator;
+
+-(void) setNumerator:(int)num
+      andDenominator:(int)denom
+{
+    int GCD = gcd(num,denom);
+    
+    [self setNumerator:num/GCD];
+    [self setDenominator:denom/GCD];
+    
+}
 
 -(void) modifyByAdding:(WCSMutableFraction*)fract
 {
