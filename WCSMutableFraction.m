@@ -7,7 +7,6 @@
 //
 
 #import "WCSMutableFraction.h"
-#import "WCSFraction.m"
 
 @implementation WCSMutableFraction
 @synthesize numerator = _AOII_numerator;
@@ -20,7 +19,6 @@
     
     [self setNumerator:num/GCD];
     [self setDenominator:denom/GCD];
-    
 }
 
 -(void) modifyByAdding:(WCSMutableFraction*)fract
@@ -35,13 +33,12 @@
     resultNum = (a * d) + (c * b);
     resultDenom = c * d;
     
-    [self setNumerator:resultNum];
-    [self setDenominator:resultDenom];
-    
-    [fract reduced];
+    [self setNumerator:resultNum
+        andDenominator:resultDenom];
+
 }
 
--(void)modifyByMultiplying:(WCSMutableFraction *)fract
+-(void)modifyByMultiplying:(WCSMutableFraction*)fract
 {
     int a = [self numerator];
     int b = [fract numerator];
@@ -53,13 +50,11 @@
     resultNum = a * b;
     resultDenom = c * d;
     
-    [self setNumerator:resultNum];
-    [self setDenominator:resultDenom];
-    
-    [fract reduced];
+    [self setNumerator:resultNum
+        andDenominator:resultDenom];
 }
 
--(void)modifyByInverting:(WCSMutableFraction *)fract
+-(void)modifyByInverting
 {
     
 }
