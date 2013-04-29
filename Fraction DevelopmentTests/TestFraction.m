@@ -43,9 +43,9 @@
 - (void)setUp
 {
     [super setUp];
-    frac_two = [[WCSFraction alloc] initWithInteger:2];
-    frac_one = [[WCSFraction alloc] initWithInteger:1];
-    frac_zero = [[WCSFraction alloc] initWithInteger:0];
+    frac_two = [[WCSFraction alloc] initWithNumerator:2 andDenominator:1];
+    frac_one = [[WCSFraction alloc] initWithNumerator:1 andDenominator:1];
+    frac_zero = [[WCSFraction alloc] initWithNumerator:0 andDenominator:1];
 }
 
 - (void)tearDown
@@ -79,7 +79,7 @@
 {
     //given
     result = [[WCSFraction alloc] initWithNumerator:2 andDenominator:1];
-    target = [[WCSFraction alloc] initWithInteger:2];
+    target = [[WCSFraction alloc] initWithNumerator:2 andDenominator:1];
     // then
     assertThat(result, is(equalTo(target)));
 }
@@ -88,7 +88,7 @@
 {
     //given
     result = [[WCSFraction alloc] initWithNumerator:4 andDenominator:2];
-    target = [[WCSFraction alloc] initWithInteger:2];
+    target = [[WCSFraction alloc] initWithNumerator:2 andDenominator:1];
     // then
     assertThat(result, is(equalTo(target)));
 }

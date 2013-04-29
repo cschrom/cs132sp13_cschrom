@@ -56,6 +56,12 @@
 
 -(void)modifyByInverting
 {
-    
+    [self reciprocal];
+
+}
+
+-(void)modifyByNegating
+{
+    [self negative];
 }
 @end
