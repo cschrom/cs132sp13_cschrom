@@ -24,6 +24,12 @@ int main(int argc, char *argv[])
     theResult = [oneThird minus:oneHalf];
     NSLog(@"%@", theResult);
     
+    oneEighth = [[WCSMutableFraction alloc] initWithNumerator:1 andDenominator:8];
+    two = [[WCSMutableFraction alloc] initWithNumerator:4 andDenominator:2];
+    theMutant = [[WCSMutableFraction alloc] initWithNumerator:5 andDenominator:8];
+    theMutant = [theMutant minus:oneEighth];
+    theMutant = [theMutant multiply:two];
+    NSLog(@"%@", theMutant);
     
     return NSApplicationMain(argc, (const char **)argv);
 }
