@@ -99,12 +99,12 @@
     return result;
 }
 
--(WCSFraction*) addTo
+-(WCSFraction*) addTo:(WCSFraction*)frac
 {
     int a = [self numerator];
-    int b = [self numerator];
+    int b = [frac numerator];
     int c = [self denominator];
-    int d = [self denominator];
+    int d = [frac denominator];
     int resultNum;
     int resultDenom;
     WCSFraction* result;
@@ -121,12 +121,12 @@
     return [result reduced];
 }
 
--(WCSFraction*) subtractFrom
+-(WCSFraction*) subtractFrom:(WCSFraction*)frac
 {
     int a = [self numerator];
-    int b = [self numerator];
+    int b = [frac numerator];
     int c = [self denominator];
-    int d = [self denominator];
+    int d = [frac denominator];
     int resultNum;
     int resultDenom;
     WCSFraction* result;
@@ -143,11 +143,11 @@
     return [result reduced];
 }
 
--(WCSFraction*) minus
+-(WCSFraction*) minus:(WCSFraction*)frac
 {
-    int a = [self numerator];
+    int a = [frac numerator];
     int b = [self numerator];
-    int c = [self denominator];
+    int c = [frac denominator];
     int d = [self denominator];
     int resultNum;
     int resultDenom;
@@ -166,12 +166,12 @@
     return [result reduced];
 }
 
--(WCSFraction*) multiply
+-(WCSFraction*) multiply:(WCSFraction*)frac
 {
     int a = [self numerator];
-    int b = [self numerator];
+    int b = [frac numerator];
     int c = [self denominator];
-    int d = [self denominator];
+    int d = [frac denominator];
     int resultNum;
     int resultDenom;
     WCSFraction* result;
@@ -188,12 +188,12 @@
     return [result reduced];
 }
 
--(WCSFraction*) divideBy
+-(WCSFraction*) divideBy:(WCSFraction*)frac
 {
     int a = [self numerator];
-    int b = [self numerator];
+    int b = [frac numerator];
     int c = [self denominator];
-    int d = [self denominator];
+    int d = [frac denominator];
     int resultNum;
     int resultDenom;
     WCSFraction* result;
@@ -209,12 +209,11 @@
     [result convertToFract];
     return [result reduced];
 }
-
--(WCSFraction*) DivideInto
+-(WCSFraction*) divideInto:(WCSFraction*)frac
 {
-    int a = [self numerator];
+    int a = [frac numerator];
     int b = [self numerator];
-    int c = [self denominator];
+    int c = [frac denominator];
     int d = [self denominator];
     int resultNum;
     int resultDenom;
@@ -240,7 +239,7 @@
     //   It is often easiest to determine whether
     //    a value is postive, negative, or zero
     
-    int difference = [[self minus] numerator];
+    int difference = [[self minus:otherFraction] numerator];
     
     if(difference > 0) return NSOrderedDescending; // self > other
     if(difference < 0) return NSOrderedAscending; // self < other

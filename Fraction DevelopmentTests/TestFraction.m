@@ -123,7 +123,7 @@
 - (void)testOneTimesZeroEqualsZero
 {
     // given
-    result = [frac_one multiplyBy:frac_zero];
+    result = [frac_one multiply:frac_zero];
     // then
     assertThat(result, is(equalTo(frac_zero)));
 }
@@ -131,7 +131,7 @@
 - (void)testAdditionLeavesSummandsUnaltered
 {
     // given
-    result = [frac_one multiplyBy:frac_zero];
+    result = [frac_one multiply:frac_zero];
     // then
     assertThat(frac_one, isNot(equalTo(frac_zero)));
 }
@@ -190,8 +190,7 @@
     RHS = [[WCSFraction alloc] initWithNumerator:3 andDenominator:5];
     target = [[LHS divideBy:RHS] reciprocal];
     result = [LHS divideInto:RHS];
-    // then
-    assertThat(result, is(equalTo(target)));
+    // then    assertThat(result, is(equalTo(target)));
 }
 
 -(void)testNegationIsOrderTwo

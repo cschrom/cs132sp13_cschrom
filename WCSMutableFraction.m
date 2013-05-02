@@ -21,7 +21,7 @@
     [self setDenominator:denom/GCD];
 }
 
--(void) modifyByAdding:(WCSMutableFraction*)fract
+-(void) modifyByAdding:(WCSFraction*)fract
 {
     int a = [self numerator];
     int b = [fract numerator];
@@ -38,7 +38,7 @@
 
 }
 
--(void)modifyByMultiplying:(WCSMutableFraction*)fract
+-(void)modifyByMultiplying:(WCSFraction*)fract
 {
     int a = [self numerator];
     int b = [fract numerator];

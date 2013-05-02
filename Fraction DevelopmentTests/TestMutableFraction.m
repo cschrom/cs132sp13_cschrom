@@ -9,6 +9,7 @@
 
     // Class under test
 #import "WCSMutableFraction.h"
+#import "WCSFraction.h"
 
     // Collaborators
 
@@ -41,9 +42,9 @@
 {
     [super setUp];
     sut = [[WCSMutableFraction alloc] init];
-    frac_two = [[WCSFraction alloc] initWithInteger:2];
-    frac_one = [[WCSFraction alloc] initWithInteger:1];
-    frac_zero = [[WCSFraction alloc] initWithInteger:0];
+    frac_two = [[WCSFraction alloc] initWithNumerator:2 andDenominator:1];
+    frac_one = [[WCSFraction alloc] initWithNumerator:1 andDenominator:1];
+    frac_zero = [[WCSFraction alloc] initWithNumerator:0 andDenominator:1];
 
 }
 
@@ -123,7 +124,7 @@
     //when
     [sut modifyByMultiplying:frac_two];
     //then
-    assertThat(sut, is(equalTo([frac_two multiplyBy:frac_two])));
+    assertThat(sut, is(equalTo([frac_two multiply:frac_two])));
 }
 
 -(void)testThatInvertingAltersValue

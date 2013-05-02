@@ -14,8 +14,8 @@
 
 -(void) setNumerator:(int)num
       andDenominator:(int)denom;
--(void) modifyByAdding:(WCSMutableFraction*)fract;
--(void) modifyByMultiplying:(WCSMutableFraction*)fract;
+-(void) modifyByAdding:(WCSFraction*)fract;
+-(void) modifyByMultiplying:(WCSFraction*)fract;
 -(void)modifyByInverting;
 -(void)modifyByNegating;
 

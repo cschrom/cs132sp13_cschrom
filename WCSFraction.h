@@ -24,12 +24,12 @@ int gcd(int a, int b);
 -(WCSFraction*) negative;
 -(WCSFraction*) reciprocal;
 -(WCSFraction*) reduced;
--(WCSFraction*) addTo;
--(WCSFraction*) subtractFrom;
--(WCSFraction*) minus;
--(WCSFraction*) multiply;
--(WCSFraction*) divideBy;
--(WCSFraction*) DivideInto;
+-(WCSFraction*) addTo:(WCSFraction*)frac;
+-(WCSFraction*) subtractFrom:(WCSFraction*)frac;
+-(WCSFraction*) minus:(WCSFraction*)frac;
+-(WCSFraction*) multiply:(WCSFraction*)frac;
+-(WCSFraction*) divideBy:(WCSFraction*)frac;
+-(WCSFraction*) divideInto:(WCSFraction*)frac;
 - (BOOL)isEqual:(id)other;
 -(NSUInteger) hash;
 @end
