@@ -21,6 +21,13 @@
     [self setDenominator:denom/GCD];
 }
 
+-(id)mutablecopyWithZone:(NSZone*)zone
+{
+    WCSFraction* theFraction;
+    theFraction = [[WCSFraction allocWithZone:zone] initWithFraction:self];
+    return theFraction;
+}
+
 -(void) modifyByAdding:(WCSFraction*)fract
 {
     int a = [self numerator];
