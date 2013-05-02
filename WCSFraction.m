@@ -23,9 +23,18 @@
     return Nil;
 }
 
+-(id)copyWithZone:(NSZone*)zone
+{
+    WCSFraction* theFraction;
+    theFraction = [[WCSFraction allocWithZone:zone] initWithFraction:self];
+    return theFraction;
+}
+
 -(id) initWithFraction:(id)FractPtr
 {
-    return nil;
+    WCSFraction* theFraction;
+    theFraction = [[WCSFraction alloc] initWithNumerator:[FractPtr numerator] andDenominator:[FractPtr denominator]];
+    return theFraction;
 }
 
 -(NSString*) description
