@@ -22,6 +22,12 @@
             {
                 [self clearAccumulator:theKey];
                 [self clearOperation:theKey];
+            } else if (isSwitchKey(theKey) == YES)
+            {
+                [self switchPart:[theKey]]
+            } else if (isDeleteKey(theKey) == YES)
+            {
+                [self deleteSpace:theKey];
             } //else NSLog(@"uncovered argument '%c' response to '%@' message received by object at %p (%@)", theKey, NSStringFromSelector(_cmd), self, self);
     return;
 }
