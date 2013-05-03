@@ -152,3 +152,19 @@ bool isArithmeticAllKey(char theOperator)
         return YES;
     } else return NO;
 }
+
+bool isSwitchKey(char flop)
+{
+    if (flop == '%')
+    {
+        return YES;
+    } else return NO;
+}
+
+bool isDeleteKey(char deleteKey);
+{
+    if (deleteKey == '_')
+    {
+        return YES;
+    } else return NO;
+}

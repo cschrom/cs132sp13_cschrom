@@ -20,4 +20,6 @@ bool isADigit(char someChar);
 bool isClearScreenKey(char theChar);
 bool isClearAllKey(char AllClear);
 bool isResultKey(char resultKey);
-bool isArithmeticAllKey(char arithmetic);
+bool isArithmeticAllKey(char theOperator);
+bool isSwitchKey(char flop);
+bool isDeleteKey(char deleteKey);
