@@ -39,7 +39,15 @@
 
 -(NSString*) description
 {
-    return nil;
+    if([self denominator] == 0)
+    {
+        return [NSString stringWithFormat: @"ERROR" ];
+    }
+    else if([self denominator] == 1)
+    {
+        return [NSString stringWithFormat: @"%d" , [self numerator]];
+    }
+    else return [NSString stringWithFormat: @"%d/%d" , [self numerator] , [self denominator]];
 }
 
 -(float) someFloat;
