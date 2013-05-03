@@ -2,15 +2,15 @@
 
 typedef enum
 {
-    WCSPartNumerator,
-    WCSPartDenominator
-} WCSPartofFraction;
+    WCSPartTop,
+    WCSPartBottom
+} entryPart;
 
 @interface Calculator: NSObject;
 @property (assign) int numberOnScreen;
 @property (assign) int numberAccumulated;
 @property (assign) char operationPending;
-@property (assign) WCSPartofFraction WCSFractionPart;
+@property (assign) entryPart activePart;
 
 -(void) pressKey: (char) theKey;
 -(void) appendDigit: (char) charDigit;

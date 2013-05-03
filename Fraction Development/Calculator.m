@@ -1,4 +1,6 @@
 #import "Calculator.h"
+#import "WCSFraction.h"
+#import "WCSMutableFraction.h"
 
 @implementation Calculator
 
@@ -18,13 +20,13 @@
             } else if (isArithmeticAllKey(theKey) == YES)
             {
                 [self registerArithmetic:theKey];
-            } else if (isClearAllKey(theKey) == YES);
+            } else if (isClearAllKey(theKey) == YES)
             {
                 [self clearAccumulator:theKey];
                 [self clearOperation:theKey];
             } else if (isSwitchKey(theKey) == YES)
             {
-                [self switchPart:[theKey]]
+                [self switchPart:(theKey)];
             } else if (isDeleteKey(theKey) == YES)
             {
                 [self deleteSpace:theKey];
@@ -64,6 +66,7 @@
 
 -(void) registerArithmetic: (char) theOperator
 {
+    [self computeAndDisplayResult];
     [self setNumberAccumulated:_numberOnScreen];
     [self clearScreen:0];
     [self setOperationPending:theOperator];
@@ -153,7 +156,7 @@ bool isResultKey(char resultKey)
 
 bool isArithmeticAllKey(char theOperator)
 {
-    if(theOperator == '+' || theOperator == '-' || theOperator == '*' || theOperator == '/' || theOperator == '%')
+    if(theOperator == '+' || theOperator == '-' || theOperator == '*' || theOperator == '/')
     {
         return YES;
     } else return NO;
@@ -169,7 +172,7 @@ bool isSwitchKey(char flop)
 
 bool isDeleteKey(char deleteKey);
 {
-    if (deleteKey == '_')
+    if (deleteKey == '<')
     {
         return YES;
     } else return NO;
