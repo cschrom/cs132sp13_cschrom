@@ -1,0 +1,22 @@
+//
+//  WCSMutableFraction.h
+//  Fraction Development
+//
+//  Created by Colby Schrom on 4/18/13.
+//  Copyright (c) 2013 Wells CS132: Object Oriented Programming. All rights reserved.
+//
+
+#import "WCSFraction.h"
+
+@interface WCSMutableFraction : WCSFraction
+@property (readwrite, assign) int numerator;
+@property (readwrite, assign) int denominator;
+
+-(void) setNumerator:(int)num
+      andDenominator:(int)denom;
+-(void) modifyByAdding:(WCSFraction*)fract;
+-(void) modifyByMultiplying:(WCSFraction*)fract;
+-(void)modifyByInverting;
+-(void)modifyByNegating;
+
+@end
